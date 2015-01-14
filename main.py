@@ -1,8 +1,4 @@
-import pygame
-import math
-import time
-import os
-import rendermodule
+import pygame, math, time, os, sys, rendermodule
 from pygame.locals import *
 from map1 import map1
 import dumbmenu as dm
@@ -60,7 +56,7 @@ def main():
     ret = pygame.transform.scale2x(ret)
     ret = pygame.transform.scale2x(ret)
     pygame.event.set_grab(True)
-    pygame.display.set_caption("Collin's Game")
+    pygame.display.set_caption("3C")
 
     # Android version coming soon... maybe!
     if android:
@@ -121,7 +117,7 @@ def main():
                         'Quit Game'], 64,64,None,32,1.4,green,red)
 
                     if choose == 0:
-                        print "You choose 'Start Game'."
+                        print ""
                     elif choose == 1:
 
                         screen.fill(blue)
@@ -148,7 +144,7 @@ def main():
                     elif choose == 2:
                         print "You choose 'Manual'."
                     elif choose == 3:
-                        return
+                        sys.exit()
 
                 elif event.key == K_m:
                     sound = sound + 1
