@@ -1,0 +1,1 @@
+These are the instructions move with WASD. shoot with the mouse. I'll write proper ones at some point.
