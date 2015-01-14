@@ -1,5 +1,6 @@
 import pygame, math, time, os, sys, rendermodule
 from pygame.locals import *
+from map0 import map0
 from map1 import map1
 import dumbmenu as dm
 
@@ -114,6 +115,7 @@ def main():
                         'Resume',
                         'Options',
                         'Help',
+                        'Maps',
                         'Quit Game'], 64,64,None,32,1.4,green,red)
 
                     if choose == 0:
@@ -137,13 +139,33 @@ def main():
                                 screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
                                 Fullscreen = True
                         elif choose == 1:
-                            print "You choose 'TexturePacks'."
+                            print "You chose texturepacks"
                         elif choose == 2:
                             break
 
                     elif choose == 2:
-                        print "You choose 'Manual'."
+                        os.open(Instructions.txt)
                     elif choose == 3:
+
+                        screen.fill(blue)
+                        pygame.display.update()
+                        pygame.key.set_repeat(500,30)
+                        
+                        choose = dm.dumbmenu(screen, [
+                            'Map1 (Main)',
+                            'Map0 (Debug)',
+                            'Back'], 64,64,None,32,1.4,green,red)
+
+                        if choose == 0:
+                            if Fullscreen == True:
+                                map = map1
+                            wm = rendermodule.WorldManager(map, sprite_positions, 22, 11.5, -1, 0, 0, .66)
+                        elif choose == 1:
+                            map = map0
+                            wm = rendermodule.WorldManager(map, sprite_positions, 22, 11.5, -1, 0, 0, .66)
+                        elif choose == 2:
+                            break
+                    elif choose ==4:
                         sys.exit()
 
                 elif event.key == K_m:
