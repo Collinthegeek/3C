@@ -144,7 +144,7 @@ def main():
                             break
 
                     elif choose == 2:
-                        os.open(Instructions.txt)
+                        os.open("Instructions.txt")
                     elif choose == 3:
 
                         screen.fill(blue)
