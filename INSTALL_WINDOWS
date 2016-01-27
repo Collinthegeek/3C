@@ -1,4 +1,6 @@
 I don't want to write a script... Here's how to manually do it. Make a github issue if you have problems
+Click "Download ZIP" on http://github.com/Collinthegeek/3C
+Extract it to a folder on you desktop or wherever
 Download python from python.org
 Install python
 Download and install pygame from pygame.org
